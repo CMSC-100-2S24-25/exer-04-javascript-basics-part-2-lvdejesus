@@ -2,10 +2,12 @@ const uuid = require("uuid");
 const validator = require("validator");
 const fs = require("fs");
 
+// Generates a unique id from the first letter of the first name, last name, and a random 8-character uuid.
 function generateUniqueID(firstName, lastName) {
   return firstName[0].toLowerCase() + lastName.toLowerCase() + uuid.v4().slice(0, 8);
 }
 
+// Validates and adds account to a file.
 function addAccount(values) {
   if (values.length != 4)
     return false;
